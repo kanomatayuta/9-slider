@@ -14,7 +14,7 @@
   const next = document.getElementById('next');
 
   // 現在表示されている画像のインデックス番号
-  let current = 0;
+  let index = 0;
   // 連続クリック(アニメーションが終わる前まで)を防止のためボタンのイベント処理に使用
   let clickBtn = true;
 
@@ -25,13 +25,13 @@
       clickBtn = false;
       // スライドショーのクラス（appear）を追加
       view.classList.add("anime");
-      // current−１つ減;
-      current--;
-      // current0より小さくなったりしないようにif文で分岐
-      // currentとsetImage.lengthの整合性を合わせるためにsetImage.lengthから-1
-      if (current < 0) current = setImage.length - 1;
-      // currentをインデックス番号として変数setImageの配列からcurrentのインデックス番号の画像を取り出す
-      view.src = setImage[current];
+      // index番号−１つ減;
+      index--;
+      // indexが0より小さくなったりしないようにif文で分岐
+      // indexとsetImage.lengthの整合性を合わせるためにsetImage.lengthから-1
+      if (index < 0) index = setImage.length - 1;
+      // setImageの配列から現在のインデックス番号の画像を取り出す
+      view.src = setImage[index];
       // スライドショーのクラス（anime）を外す
       setTimeout('view.classList.remove("anime");', 2100);
       setTimeout(function () {
@@ -50,13 +50,12 @@
       clickBtn = false;
       // スライドショーのクラス（appear）を追加
       view.classList.add("anime");
-      // current＋１つ増;
-      current++;
-      // currentの数値が画像の枚数より多くなったりしないようにif文で分岐
-      //上限まで行くと０に戻す
-      if  (current > setImage.length-1) current = 0;
-      // currentをインデックス番号として変数setImageの配列からcurrentのインデックス番号の画像を取り出す
-      view.src = setImage[current];
+      // index番号t＋１つ増;
+      index++;
+      // indexの数値と画像の枚数が同じ値になるとindex値を０に戻す
+      if (index === setImage.length) index = 0;
+      // setImageの配列から現在のインデックス番号の画像を取り出す
+      view.src = setImage[index];
       // スライドショーのクラス（anime）を外す
       setTimeout('view.classList.remove("anime");', 2100);
       setTimeout(function () {

@@ -33,16 +33,16 @@ ul{
 .slider img {
   width: 100%;
   backface-visibility: hidden; /*背面が非表示*/
-  -webkit-backface-visibility: hidden;  /*Crome, Safari対応*/
+  -webkit-backface-visibility: hidden;  /*Chrome, Safari対応*/
   -moz-backface-visibility: hidden;  /*Firefox対応*/
 }
 
 .anime {
   animation: fadeIn 2s ease 0s 1 normal;
-  -webkit-animation: fadeIn 2s ease 0s 1 normal; /*Crome, Safari対応*/
+  -webkit-animation: fadeIn 2s ease 0s 1 normal; /*Chrome, Safari対応*/
   -moz-animation: fadeIn 2s ease 0s 1 normal; /*Firefox対応*/
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden; /*Crome, Safari対応*/
+  -webkit-backface-visibility: hidden; /*Chrome, Safari対応*/
   -moz-backface-visibility: hidden;  /*Firefox対応*/
 }
 @keyframes fadeIn {
@@ -53,7 +53,7 @@ ul{
     opacity: 1
   }
 }
-@-webkit-keyframes fadeIn { /*Crome, Safari対応*/
+@-webkit-keyframes fadeIn { /*Chrome, Safari対応*/
   0% {
     opacity: 0.2
   }
@@ -78,6 +78,7 @@ ul{
   font-size: 2.5em;
   position: absolute;
   top: 50%;
+  cursor: pointer;
 }
 .slider .right{
   right: 2%;
